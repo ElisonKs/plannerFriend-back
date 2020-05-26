@@ -1,0 +1,28 @@
+{
+  "name": "portiate",
+  "version": "1.0.0",
+  "description": "Planner",
+  "main": "plannerServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Elison Queiroz",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "component-querystring": "^2.0.0",
+    "env2": "^2.2.2",
+    "hapi": "^17.6.0",
+    "hapi-auth-basic": "^5.0.0",
+    "has": "^1.0.3",
+    "inert": "^5.1.0",
+    "joi": "^13.7.0",
+    "json2csv": "^4.2.1",
+    "json2xls": "^0.1.2",
+    "moment": "^2.24.0",
+    "mongoose": "^5.3.2",
+    "node-ses": "^2.1.0",
+    "type": "^2.0.0",
+    "vision": "^5.4.0"
+  }
+}
