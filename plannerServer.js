@@ -6,6 +6,8 @@ const Bcrypt = require('bcryptjs');
 const HapiAuthBasic = require('hapi-auth-basic');
 const Routes = require('./routes')
 const Database = require('./controllers/helpers/database');
+const dotenv = require("dotenv-safe");
+var jwt = require('jsonwebtoken');
 // SERVER SETTINGS
 const server = Hapi.server({
     port: 6190,
@@ -36,6 +38,8 @@ const init = async () => {
         Vision,
         HapiAuthBasic
     ]);
+
+  
     // SERVER AUTH - WHEN NECESSARY
     server.auth.strategy('simple', 'basic', { validate });    
     // ROUTES

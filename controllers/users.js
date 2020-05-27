@@ -7,8 +7,10 @@ const moment = require('moment');
 var querystring = require('querystring');
 var has = require('has');
 const Joi = require('joi');
+var jwt = require('jsonwebtoken');
 
 const pageCount = 30; // DEFAULT
+const secret ="123";
 
 
 exports.registerUser = {    
@@ -43,9 +45,15 @@ exports.registerUser = {
                 promiseSave.then(function (doc) {
                     console.log("Lead saved!");
                     console.log(doc);
+                    const id = doc._id;
+                    var token = jwt.sign({ id }, secret, {
+                        expiresIn: 30000 // expires in 5min
+                      });
+
                     resolve({
                         status: 'OK',
-                        message: 'User created successfully.'
+                        message: 'User created successfully.',
+                        token: token
                     });
                 })
                 .catch(function(err){                    
